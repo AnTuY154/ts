@@ -14,6 +14,7 @@ export function Login() {
     const history = useHistory();
     const user = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
+
     useEffect(() => {
         if (user.isLogin) {
             history.push('/home');
@@ -57,8 +58,11 @@ export function Login() {
                     // validate here
                     rules={[
                         {
-                            validator: (rule: any, value: string, cb: (msg?: string) => void) => {
-                                value.length < 3 ? cb("too short") : cb();
+                            validator: (rule: any, value: string) => {
+                                if (value.length < 3) {
+                                    return Promise.reject("A")
+                                }
+                                return Promise.resolve();
                             }
                         }
                     ]}

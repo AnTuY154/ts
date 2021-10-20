@@ -1,5 +1,5 @@
 import { userState } from './type'
-import { LOGIN, LOGIN_FAIL, LOGIN_SUCCESS } from './type';
+import { ELoginStatus } from './type';
 const initialState: userState = {
     userName: '',
     isLogin: false,
@@ -9,14 +9,15 @@ const initialState: userState = {
 
 
 const userReducer = (state = initialState, action: any) => {
+
     switch (action.type) {
-        case LOGIN: {
+        case ELoginStatus.LOGIN: {
             return {
                 ...state,
                 loading: true
             };
         }
-        case LOGIN_SUCCESS: {
+        case ELoginStatus.LOGIN_SUCCESS: {
             // May be save access here
             return {
                 ...state,
@@ -25,7 +26,7 @@ const userReducer = (state = initialState, action: any) => {
                 userName: action.payload.userName
             };
         }
-        case LOGIN_FAIL: {
+        case ELoginStatus.LOGIN_FAIL: {
             return {
                 ...state,
                 loading: false,

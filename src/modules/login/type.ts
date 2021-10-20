@@ -5,8 +5,8 @@ export interface userState {
     error: any,
 }
 
-export const LOGIN = 'LOGIN'
-
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
-
-export const LOGIN_FAIL = 'LOGIN_FAIL'
+export enum ELoginStatus {
+    LOGIN = 'LOGIN',
+    LOGIN_SUCCESS = 'LOGIN_SUCCESS',
+    LOGIN_FAIL = 'LOGIN_FAIL'
+}

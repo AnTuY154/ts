@@ -1,9 +1,6 @@
 // A mock function to mimic making an async request for data
 const axios = require('axios');
 
-
-
-
 const authenAPI = {
     login: (userInfo: any) => {
         return axios({
@@ -16,7 +13,6 @@ const authenAPI = {
         });
     }
 }
-
 
 export default authenAPI;
 
